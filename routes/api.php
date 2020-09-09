@@ -20,4 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::prefix('product')->group(function () {
     Route::get('listProduct','Api\V1\ProductCtrl@index');
+    Route::post('store','Api\V1\ProductCtrl@stroe');
+    Route::put('update/{$id}','Api\V1\Product@update');
+    Route::post('detail/{$id}','Api\V1\ProductCtrl@detail');
+    Route::delete('delete/{$id}','Api\V1\ProductCtrl@delete');
 });
